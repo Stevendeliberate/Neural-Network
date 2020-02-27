@@ -18,7 +18,7 @@ def update(x,y,w,lr=0.03,epoches=50000):
     return w
 
 #数据产生
-x_data = np.random.normal(-10,10,(3,10))
+x_data = np.random.normal(-10,10,(2,10))
 x_data = np.sort(x_data)
 y_data = np.random.randint(0,2,(1,10))
 y_data = np.sort(y_data)
@@ -28,15 +28,15 @@ x_data = np.r_[x_data,np.ones(x_data.shape[1]).reshape((1,10))]
 w = np.ones(x_data.shape[0])
 w = w[np.newaxis,:]
 
-print(x_data)
-print(y_data)
-print(w)
+print("x_data:",x_data)
+print("y_data:",y_data)
+print("w:",w)
 
 w = update(x_data,y_data,w)
 print(w)
 
 
-'''
+
 #2dim绘图
 #计算分解线的斜率和截距
 k = -w[0,0]/w[0,1]
@@ -51,6 +51,7 @@ print(y_test)
 plt.scatter(x_data[0,:],x_data[1,:],c = y_data[0,:])
 plt.plot(x_test[0,:],y_test,'r')
 plt.show()
+
 '''
 #3dim绘图
 fig = plt.figure()
@@ -67,3 +68,4 @@ X,Y = np.meshgrid(x_test[0,:],x_test[1,:])
 Z = X*k1 + Y * k2 + b
 ax.plot_surface(X,Y,Z,color = 'blue')
 plt.show()
+'''
