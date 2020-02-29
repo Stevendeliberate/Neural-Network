@@ -8,7 +8,7 @@ def update(x,y,w,lr,epochs):
     for i in range(epochs):
        t = purelin(np.dot(x,w))
        y_gard = y - t
-       w = w + lr * np.dot(x.T,y_gard)/x.shape[0]
+       w = w + lr * np.dot(x.T,y_gard)/x.shape[0] #这里一定要除以样本数量，以平均误差
     return w
 
 #训练数据

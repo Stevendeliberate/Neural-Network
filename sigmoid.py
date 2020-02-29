@@ -5,6 +5,9 @@ def sigmoid(x):
     y = 1 / (1 + np.exp(-x))
     return y
 
+def Dsigmoid(x):
+    return x * (1 - x)
+
 '''
 x_data = np.linspace(-5,5,50)
 y_data = sigmoid(x_data)
